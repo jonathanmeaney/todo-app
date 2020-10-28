@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: "site#index"
+  get '/about', to: 'site#about'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
