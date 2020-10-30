@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  # home page
   root to: "site#index"
-  get '/about', to: 'site#about'
+  # about page
+  get 'about', to: 'site#about'
+
+  # users
   resources :users, only: [:new, :create]
+
+  #sessions
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'welcome', to: 'sessions#welcome'
+  get 'logout', to: 'sessions#logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
