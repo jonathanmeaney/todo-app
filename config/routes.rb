@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :to_dos
   # home page
   root to: "site#index"
   # about page
