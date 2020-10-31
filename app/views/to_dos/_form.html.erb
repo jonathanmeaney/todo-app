@@ -1,0 +1,25 @@
+<%= form_for(@to_do) do |f| %>
+  <% if @to_do.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@to_do.errors.count, "error") %> prohibited this to_do from being saved:</h2>
+
+      <ul>
+      <% @to_do.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>
